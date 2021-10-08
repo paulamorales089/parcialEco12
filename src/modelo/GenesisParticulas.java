@@ -31,22 +31,22 @@ public class GenesisParticulas {
 	
 	public void arribaParticula()
 	{
-		posYE -= 3;
+		posYE -= 2;
 	}
 	
 	public void abajoParticula()
 	{
-		posYE += 3;
+		posYE += 2;
 	}
 	
 	public void derechaParticula()
 	{
-		posXE += 3;
+		posXE += 2;
 	}
 	
 	public void izquierdaParticula()
 	{
-		posXE -= 3;
+		posXE -= 2;
 	}
 	
 	

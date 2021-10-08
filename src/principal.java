@@ -35,7 +35,7 @@ public class principal extends PApplet {
 	BufferedReader bfr;
     BufferedWriter bfw;
 
-	private ArrayList <GenesisParticulas> arregloDeParticulas;
+	ArrayList <GenesisParticulas> arregloDeParticulas;
 	GenesisParticulas genesisParticulas;
 	
 
@@ -173,6 +173,7 @@ public class principal extends PApplet {
 	}
 	
 	public void mostrarNombre() {
+		
 		for (int i = 0; i < arregloDeParticulas.size(); i++) {
 			if(dist(mouseX, mouseY, x, y)<20) {
 				
