@@ -50,7 +50,7 @@ public class principal extends PApplet {
 		mostrarNombre=false;
 		arregloDeParticulas = new ArrayList <GenesisParticulas>(); 
 		initServer();
-		moviendose = true;
+		moviendose = false;
 		
 	}
 		
@@ -63,14 +63,15 @@ public class principal extends PApplet {
 			nombreGrupo = arregloDeParticulas.get(i).getGrupo();
 			cantidad = arregloDeParticulas.get(i).getCantidad();
 			
-			r= arregloDeParticulas.get(i).getR();
-			g= arregloDeParticulas.get(i).getG();
-			b= arregloDeParticulas.get(i).getB();
+//			r= 
+//			g= 
+//			b= 
 			
-			fill (r, g, b);
+			fill (arregloDeParticulas.get(i).getR(), arregloDeParticulas.get(i).getG(), arregloDeParticulas.get(i).getB());
 			ellipse(arregloDeParticulas.get(i).getPosXE(), arregloDeParticulas.get(i).getPosYE(),20,20);
 			
 			movimientoSexy(); 
+			mostrarNombre();
 			
 			}
 		}
@@ -144,27 +145,27 @@ public class principal extends PApplet {
 		
 		movimietos = (int)random(4);
 		
-		if(movimietos == 0){
+		if(movimietos == 0 && moviendose ){
 			
 			arregloDeParticulas.get(i).derechaParticula();	
 			arregloDeParticulas.get(i).detectorBorde();
 		}
 		
-		else if(movimietos == 1){
+		else if(movimietos == 1 && moviendose ){
 			
 			arregloDeParticulas.get(i).izquierdaParticula();
 			arregloDeParticulas.get(i).detectorBorde();
 			
 		}
 		
-		else if(movimietos == 2){
+		else if(movimietos == 2 && moviendose ){
 			
 			arregloDeParticulas.get(i).arribaParticula();
 			arregloDeParticulas.get(i).detectorBorde();
 			
 		}
 		
-		else if(movimietos == 3){
+		else if(movimietos == 3 && moviendose ){
 			arregloDeParticulas.get(i).abajoParticula();
 			arregloDeParticulas.get(i).detectorBorde();
 			
@@ -175,7 +176,7 @@ public class principal extends PApplet {
 	public void mostrarNombre() {
 		
 		for (int i = 0; i < arregloDeParticulas.size(); i++) {
-			if(dist(mouseX, mouseY, x, y)<20) {
+			if(dist(mouseX, mouseY, arregloDeParticulas.get(i).getPosXE(), arregloDeParticulas.get(i).getPosYE())<20) {
 				
 			mostrarNombre=true;	
 			moviendose=false;
@@ -183,7 +184,8 @@ public class principal extends PApplet {
 			nombreGrupo = arregloDeParticulas.get(i).getGrupo();
 			
 			fill(0);
-			text(nombreGrupo, x,y-20);
+			//textSize(10);
+			text(nombreGrupo, arregloDeParticulas.get(i).getPosXE(), arregloDeParticulas.get(i).getPosYE()-20);
 						
 			}
 		}

@@ -31,22 +31,22 @@ public class GenesisParticulas {
 	
 	public void arribaParticula()
 	{
-		posYE -= 2;
+		posYE -= 1;
 	}
 	
 	public void abajoParticula()
 	{
-		posYE += 2;
+		posYE += 1;
 	}
 	
 	public void derechaParticula()
 	{
-		posXE += 2;
+		posXE += 1;
 	}
 	
 	public void izquierdaParticula()
 	{
-		posXE -= 2;
+		posXE -= 1;
 	}
 	
 	
@@ -54,7 +54,7 @@ public class GenesisParticulas {
 	{
 		if(posXE >= 600)
 		{
-			posXE = 599;
+			posXE = 589;
 		}
 		if(posXE <= 0)
 		{
@@ -62,7 +62,7 @@ public class GenesisParticulas {
 		}
 		if(posYE >= 600)
 		{
-			posYE = 599;
+			posYE = 589;
 		}
 		if(posYE < 0)
 		{
