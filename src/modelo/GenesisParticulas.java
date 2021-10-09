@@ -1,5 +1,7 @@
 package modelo;
 
+import processing.core.PApplet;
+
 public class GenesisParticulas {
 	
 	private String grupo;
@@ -10,6 +12,7 @@ public class GenesisParticulas {
 	private int r,g,b;
 	
 	private int movimiento;
+	
 	
 
 	public GenesisParticulas (String grupo, int cantidad,  int posXE, int posYE, int r, int g, int b) {
@@ -67,6 +70,14 @@ public class GenesisParticulas {
 		if(posYE < 0)
 		{
 			posYE = 1;
+		}
+	}
+	
+	public void altoAhiParticula(PApplet app) {
+		if (app.dist(app.mouseX, app.mouseY, posXE, posYE)<20) {
+			posXE = 0;
+			posYE = 1;
+			
 		}
 	}
 
